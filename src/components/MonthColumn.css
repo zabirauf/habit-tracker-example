@@ -1,0 +1,25 @@
+.led {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.led-off {
+  background-color: #e5e7eb;
+  border: 2px solid #d1d5db;
+}
+
+.led-on {
+  background-color: #60a5fa;
+  border: 2px solid #3b82f6;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+}
+
+.led:hover:not(:disabled) {
+  transform: scale(1.1);
+}
+
+.led:active:not(:disabled) {
+  transform: scale(0.95);
+} 

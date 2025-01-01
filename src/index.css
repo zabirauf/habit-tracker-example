@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .led {
+    @apply w-8 h-8 rounded-full cursor-pointer transition-all duration-200;
+  }
+  
+  .led-off {
+    @apply bg-gray-200 border-2 border-gray-300;
+  }
+  
+  .led-on {
+    @apply bg-green-500 border-2 border-green-400 shadow-lg shadow-green-500/50;
+  }
+}
