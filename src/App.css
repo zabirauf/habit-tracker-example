@@ -40,3 +40,18 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Circuit-style page background */
+.bg-circuit-board-background {
+  background: url('/images/circuit-pattern.png') repeat;
+  background-size: contain;
+  font-family: 'Roboto Mono', monospace;
+}
+
+/* Optional: apply globally */
+body {
+  margin: 0;
+  padding: 0;
+  color: #333;
+  /* Could add special body styles, or keep minimal. */
+}

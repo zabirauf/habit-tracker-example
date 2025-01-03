@@ -1,9 +1,8 @@
-import * as React from 'react';
 import { MonthData } from '../types';
 import { calculateMonthStreak, getDaysInMonth } from '../utils';
 import './MonthColumn.css';
 
-interface MonthColumnProps {
+export interface MonthColumnProps {
   month: number;
   year: number;
   data: MonthData;
@@ -26,11 +25,11 @@ export const MonthColumn: React.FC<MonthColumnProps> = ({
   const isCurrentMonth = new Date().getMonth() === month && new Date().getFullYear() === year;
 
   return (
-    <div className="flex flex-col min-w-[120px] p-4 border-r border-gray-200 last:border-r-0">
-      <h3 className={`text-center font-bold mb-4 ${isCurrentMonth ? 'text-blue-600' : ''}`}>
-        {monthNames[month]}
+    <div className="flex flex-col min-w-[80px] p-2 border-r border-gray-700 last:border-r-0 led-column">
+      <h3 className={`text-center text-sm mb-2 ${isCurrentMonth ? 'text-yellow-400' : 'text-gray-400'}`}>
+        {monthNames[month].substring(0, 3).toLowerCase()}
       </h3>
-      <div className="flex-1 flex flex-col items-center gap-2">
+      <div className="flex-1 flex flex-col items-center">
         {Array.from({ length: 31 }, (_, i) => i + 1).map((day) => {
           const isValidDay = day <= daysInMonth;
           const isMarked = data[day];
@@ -42,13 +41,14 @@ export const MonthColumn: React.FC<MonthColumnProps> = ({
               onClick={() => isValidDay && onToggle(day)}
               disabled={!isValidDay}
               aria-label={`Toggle ${monthNames[month]} ${day}`}
-            />
+            >
+              {day}
+            </button>
           );
         })}
       </div>
-      <div className="mt-4 text-center">
-        <span className="text-sm text-gray-600">Streak</span>
-        <div className="font-bold text-lg">{streak}</div>
+      <div className="mt-2 text-center streak-counter text-xs p-1">
+        {streak}
       </div>
     </div>
   );

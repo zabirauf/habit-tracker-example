@@ -1,25 +1,44 @@
 .led {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
+  width: 36px;
+  height: 40px;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  position: relative;
+  margin: 2px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 12px;
+  color: #666;
   transition: all 0.2s ease;
+  cursor: pointer;
 }
 
 .led-off {
-  background-color: #e5e7eb;
-  border: 2px solid #d1d5db;
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
 }
 
 .led-on {
-  background-color: #60a5fa;
-  border: 2px solid #3b82f6;
-  box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+  background-color: #4ade80;
+  border: 1px solid #22c55e;
+  color: #fff;
+  box-shadow: none;
+}
+
+.led-column {
+  background: #111;
+  border-left: 1px solid #333;
+  padding: 8px 6px;
+  min-width: 110px;
 }
 
 .led:hover:not(:disabled) {
-  transform: scale(1.1);
+  transform: none;
 }
 
-.led:active:not(:disabled) {
-  transform: scale(0.95);
+.streak-counter {
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #333;
 } 
