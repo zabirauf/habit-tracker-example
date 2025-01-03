@@ -35,10 +35,29 @@
 
 .led:hover:not(:disabled) {
   transform: none;
+  cursor: pointer;
 }
 
 .streak-counter {
   background-color: #222;
   color: #fff;
   border: 1px solid #333;
+}
+
+.led-off:hover:not(:disabled) {
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(255, 236, 179, 0.6),
+              0 0 15px rgba(255, 224, 130, 0.6),
+              0 0 25px rgba(255, 193, 7, 0.6),
+              0 0 35px rgba(255, 167, 38, 0.4);
+  transform: scale(1.08);
+}
+
+.led-on:hover:not(:disabled) {
+  background-color: #5bef91;
+  box-shadow: 0 0 5px rgba(74, 222, 128, 0.6),
+              0 0 15px rgba(74, 222, 128, 0.6),
+              0 0 25px rgba(74, 222, 128, 0.6),
+              0 0 35px rgba(74, 222, 128, 0.4);
+  transform: scale(1.08);
 } 
